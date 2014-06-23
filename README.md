@@ -40,7 +40,7 @@ Completed:
 
 3. Walkthrough of all user stories:
 
-![Video Walkthrough](GridImageSearch_Chen.gif)
+![Video Walkthrough](SimpleTwitterClient_Chen.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
