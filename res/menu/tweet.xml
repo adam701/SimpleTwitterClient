@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    
+    <item
+        android:id="@+id/tvWordsLeft"
+        android:showAsAction="ifRoom"
+        android:checkable="false"
+        android:enabled="false"
+        android:title="140">
+    </item>
+    
+    
+    <item
+        android:id="@+id/btnTweet"
+        android:showAsAction="ifRoom"
+        android:onClick="onTweet"
+        android:title="Tweet">
+    </item>
+
+</menu>

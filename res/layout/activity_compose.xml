@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <ImageView
+        android:id="@+id/ivProfile1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_edit" />
+
+    <EditText
+        android:id="@+id/etCompose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ivProfile1"
+        android:background="@null"
+        android:ems="10"
+        android:maxLength="140"
+        android:gravity="top"
+        android:hint="@string/happening" />
+
+    <TextView
+        android:id="@+id/tvScreenName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etCompose"
+        android:layout_toRightOf="@+id/ivProfile1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvUserid1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvScreenName1"
+        android:layout_alignParentTop="true"
+        android:text="TextView" />
+
+</RelativeLayout>
