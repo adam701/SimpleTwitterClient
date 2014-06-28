@@ -11,7 +11,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:dividerHeight="4dp"
+        android:dividerHeight="1dp"
         android:layout_alignParentTop="true" >
 
     </eu.erikw.PullToRefreshListView>

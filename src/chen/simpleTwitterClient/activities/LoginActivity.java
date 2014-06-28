@@ -32,6 +32,8 @@ public class LoginActivity extends OAuthLoginActivity<TwitterRestApiClient> {
     public void onLoginSuccess() {
     	Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
     	Log.d("DEBUG", "Login Success");
+    	
+    	
     	Intent i = new Intent(this, TimeLineActivity.class);
     	startActivity(i);
     }

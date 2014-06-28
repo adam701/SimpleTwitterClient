@@ -2,12 +2,16 @@ package chen.simpleTwitterClient.models;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
+
 import android.util.Log;
 
 @Table(name = "Tweets")
@@ -82,6 +86,10 @@ public class Tweet extends Model{
 			}
 		}
 		return list;
+	}
+	
+	public static List<Tweet> recentTweets() {
+	      return new Select().from(Tweet.class).orderBy("uid DESC").limit("300").execute();
 	}
 	
 }

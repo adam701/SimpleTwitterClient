@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:paddingBottom="3dp"
     android:layout_height="match_parent">
 
     <ImageView
@@ -16,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/ivProfile"
         android:text="TextView" />
 
@@ -23,10 +24,11 @@
         android:id="@+id/tvUserid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/tvScreenName"
-        android:textSize="9sp"
-        android:layout_alignBottom="@+id/tvScreenName"
+        android:textSize="12sp"
+        android:textColor="#B0A7A5"
+        android:layout_alignBottom="@+id/tvScreenName" 
+        android:layout_marginLeft="3dp"
         android:gravity="bottom"
         android:text="Small Text"
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -35,9 +37,11 @@
         android:id="@+id/tvCreateTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvScreenName" 
         android:layout_alignParentRight="true"
-        android:textSize="9sp"
-        android:layout_alignParentTop="true"
+        android:textSize="12sp"
+        android:textColor="#B0A7A5"
+        android:gravity="bottom"
         android:text="Small Text"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -48,6 +52,7 @@
         android:layout_alignLeft="@+id/tvScreenName"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tvScreenName"
+        android:layout_marginTop="5dp"
         android:text="TextView" />
 
     <ImageButton
@@ -57,30 +62,35 @@
         android:layout_alignLeft="@+id/tvText"
         android:layout_below="@+id/tvText"
         android:background="#00FFFFFF"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_reply" />
+        android:alpha="0.7"
+        android:src="@drawable/ic_response" />
 
     <ImageButton
-        android:id="@+id/ibRefresh"
+        android:id="@+id/ibRetweet"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignTop="@+id/ibComment"
-        android:layout_toLeftOf="@+id/tvUserid"
+        android:layout_toRightOf="@+id/ibComment"
         android:layout_alignBottom="@+id/ibComment"
         android:background="#00FFFFFF"
         android:layout_marginLeft="30dp"
-        android:src="@drawable/ic_refresh" />
+        android:alpha="0.7"
+        android:src="@drawable/ic_retweet" />
 
     <ImageButton
         android:id="@+id/ibLike"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="50dp"
         android:layout_alignBottom="@+id/ibComment"
         android:layout_alignTop="@+id/ibComment"
         android:layout_below="@+id/tvText"
         android:background="#00FFFFFF"
+         android:alpha="0.7"
         android:src="@drawable/ic_star" />
+
 
 </RelativeLayout>

@@ -54,8 +54,31 @@ public class TimeLineActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		Log.d("DEBUG", "Created!");
 		setContentView(R.layout.activity_time_line);
-		init();
-		//loadFirstTimeLines(12);
+		
+		this.timeLinesListView = (PullToRefreshListView) findViewById(R.id.lvTimeLine);
+		this.tweets = new ArrayList<Tweet>();
+		this.tweetsAdapter = new TweetAdapter(this, this.tweets);
+		this.timeLinesListView.setAdapter(tweetsAdapter);
+		ActionBar ab = getActionBar();
+		ColorDrawable colorDrawable = new ColorDrawable(
+				Color.parseColor("#33CCFF"));
+		ab.setBackgroundDrawable(colorDrawable);
+		
+		if(isNetworkAvailable()){
+			Toast.makeText(getApplicationContext(), "OnLine", Toast.LENGTH_SHORT).show();
+			Log.d("DEBUG", "Online");
+			init();
+		}else{
+			Toast.makeText(getApplicationContext(), "OffLine", Toast.LENGTH_SHORT).show();
+			Log.d("DEBUG", "Offline");
+			for ( Tweet tweet : Tweet.recentTweets()){
+				Toast.makeText(getApplicationContext(), tweet.toString(), Toast.LENGTH_SHORT).show();
+				Log.d("DEBUG", tweet.toString());
+				tweetsAdapter.add(tweet);
+			}	
+		}
+		
+		
 	}
 
 	public void appendTimeLines(long max, long count) {
@@ -169,11 +192,6 @@ public class TimeLineActivity extends Activity {
 	}
 
 	public void init() {
-		this.timeLinesListView = (PullToRefreshListView) findViewById(R.id.lvTimeLine);
-		this.tweets = new ArrayList<Tweet>();
-		this.tweetsAdapter = new TweetAdapter(this, this.tweets);
-		this.timeLinesListView.setAdapter(tweetsAdapter);
-
 		onScrollListener = new EndlessScroll(tweetsAdapter) {
 
 			@Override
@@ -201,11 +219,6 @@ public class TimeLineActivity extends Activity {
 				.defaultDisplayImageOptions(DisplayImageOptions.createSimple()) // default
 				.build();
 		ImageLoader.getInstance().init(config);
-
-		ActionBar ab = getActionBar();
-		ColorDrawable colorDrawable = new ColorDrawable(
-				Color.parseColor("#33CCFF"));
-		ab.setBackgroundDrawable(colorDrawable);
 		
 		//tweetsAdapter.addAll(loadDB());
 		loadFirstTimeLines(12);
